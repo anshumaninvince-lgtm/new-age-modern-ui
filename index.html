@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dummy Index Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background-color: #2563eb;
+            color: #fff;
+            padding: 16px 24px;
+        }
+        main {
+            padding: 40px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+        }
+        footer {
+            text-align: center;
+            padding: 16px;
+            font-size: 14px;
+            color: #666;
+        }
+        button {
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dummy Application</h1>
+        <p>Welcome to the placeholder index page</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Hello World 👋</h2>
+            <p>
+                This is a dummy <code>index.html</code> file.  
+                You can replace this content with your actual application UI.
+            </p>
+            <button onclick="handleClick()">Click Me</button>
+        </div>
+
+        <div class="card">
+            <h3>Status</h3>
+            <p id="status">Application loaded successfully.</p>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 Dummy App. All rights reserved.
+    </footer>
+
+    <script>
+        function handleClick() {
+            document.getElementById("status").innerText =
+                "Button clicked at " + new Date().toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>
