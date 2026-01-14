@@ -3,76 +3,175 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dummy Index Page</title>
+    <title>Beautiful Dummy App</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #22c55e;
+            --bg-gradient: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111827;
         }
-        header {
-            background-color: #2563eb;
-            color: #fff;
-            padding: 16px 24px;
-        }
-        main {
-            padding: 40px 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
+
+        .app-container {
+            width: 100%;
+            max-width: 960px;
             padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 24px;
         }
-        footer {
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        header {
             text-align: center;
-            padding: 16px;
-            font-size: 14px;
-            color: #666;
+            margin-bottom: 32px;
         }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin: 0;
+            color: #111827;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+
         button {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, var(--primary), #4f46e5);
             color: #fff;
             border: none;
-            border-radius: 6px;
-            padding: 10px 16px;
+            border-radius: 999px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 14px;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         button:hover {
-            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 28px rgba(99, 102, 241, 0.5);
+        }
+
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dummy Application</h1>
-        <p>Welcome to the placeholder index page</p>
-    </header>
 
-    <main>
-        <div class="card">
-            <h2>Hello World 👋</h2>
-            <p>
-                This is a dummy <code>index.html</code> file.  
-                You can replace this content with your actual application UI.
-            </p>
-            <button onclick="handleClick()">Click Me</button>
+    <div class="app-container">
+        <div class="glass-card">
+            <header>
+                <h1>Dummy Application ✨</h1>
+                <p>A beautiful placeholder page to get you started</p>
+            </header>
+
+            <section class="content-grid">
+                <div class="card">
+                    <h3>Modern UI</h3>
+                    <p>Clean layout, soft shadows, and smooth animations.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive</h3>
+                    <p>Looks great on desktop, tablet, and mobile.</p>
+                </div>
+                <div class="card">
+                    <h3>Easy to Extend</h3>
+                    <p>Replace sections with your real application logic.</p>
+                </div>
+            </section>
+
+            <div class="cta">
+                <button onclick="handleClick()">Get Started</button>
+                <p id="status" style="margin-top: 12px; color:#6b7280;">
+                    App loaded successfully.
+                </p>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Status</h3>
-            <p id="status">Application loaded successfully.</p>
-        </div>
-    </main>
-
-    <footer>
-        © 2026 Dummy App. All rights reserved.
-    </footer>
+        <footer>
+            © 2026 · Crafted with ❤️ for your app
+        </footer>
+    </div>
 
     <script>
         function handleClick() {
@@ -80,5 +179,6 @@
                 "Button clicked at " + new Date().toLocaleTimeString();
         }
     </script>
+
 </body>
 </html>
